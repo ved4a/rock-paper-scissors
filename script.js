@@ -14,16 +14,16 @@ function getComputerChoice() {
 }
 
 // TESTING THE FUNCTION
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS
 
 // Sub-problem 1: making a function that takes 2 parameters
 function playRound(playerSelection, computerSelection) {
-  // Making it case-insensitive
-  playerSelection =
-    playerSelection.charAt(0).toUpperCase() +
-    playerSelection.slice(1).toLowerCase();
+  // // Making it case-insensitive
+  // playerSelection =
+  //   playerSelection.charAt(0).toUpperCase() +
+  //   playerSelection.slice(1).toLowerCase();
 
   // Sub-problem 2: declaring a winner
   if (playerSelection == computerSelection) {
@@ -43,25 +43,43 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // MAKING PLAYER SELECTION
+
 // Initial attempt: no GUI
 // const playerSelection = "paper"
+
 // Next attempt: DOM Manipulation
 
 // CREATING COMPUTER SELECTION
-const computerSelection = getComputerChoice();
+// const computerSelection = getComputerChoice();
 
 // ADDING EVENT LISTENERS TO THE BUTTONS
+
 // Sub-part 1: linking buttons from HTML to JS
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
-// Sub-part 2: creating event listeners for buttons
-rock.addEventListener("click", playRound);
-paper.addEventListener("click", playRound);
-scissors.addEventListener("click", playRound);
+
+// Sub-part 2: creating event listeners for buttons & Sub-part 3: corresponding button runs the code
+rock.addEventListener("click", function () {
+  const computerSelection = getComputerChoice();
+  const result = playRound("Rock", computerSelection);
+  console.log(result);
+});
+
+paper.addEventListener("click", function () {
+  const computerSelection = getComputerChoice();
+  const result = playRound("Paper", computerSelection);
+  console.log(result);
+});
+
+scissors.addEventListener("click", function () {
+  const computerSelection = getComputerChoice();
+  const result = playRound("Scissors", computerSelection);
+  console.log(result);
+});
 
 // TESTING FOR BUGS
-console.log(computerSelection);
+// console.log(computerSelection);
 
 // One-round game
 // console.log(playRound(playerSelection, computerSelection));
