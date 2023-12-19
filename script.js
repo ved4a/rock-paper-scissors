@@ -48,6 +48,16 @@ function playRound(playerSelection, computerSelection) {
 // Creating computer selection
 const computerSelection = getComputerChoice();
 
+// ADDING EVENT LISTENERS TO THE BUTTONS
+// Sub-part 1: linking buttons from HTML to JS
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+// Sub-part 2: creating event listeners for buttons
+rock.addEventListener("click", playRound);
+paper.addEventListener("click", playRound);
+scissors.addEventListener("click", playRound);
+
 // Testing for bugs
 console.log(computerSelection);
 
@@ -55,31 +65,31 @@ console.log(computerSelection);
 // console.log(playRound(playerSelection, computerSelection));
 
 // New function for a 5 round game
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
+// function game() {
+//   let playerScore = 0;
+//   let computerScore = 0;
 
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Do you choose rock, paper, or scissors?");
-    const computerSelection = getComputerChoice();
-    console.log(`Computer chose ${computerSelection}.`);
-    const result = playRound(playerSelection, computerSelection);
-    console.log(result);
+//   for (let i = 0; i < 5; i++) {
+//     const playerSelection = prompt("Do you choose rock, paper, or scissors?");
+//     const computerSelection = getComputerChoice();
+//     console.log(`Computer chose ${computerSelection}.`);
+//     const result = playRound(playerSelection, computerSelection);
+//     console.log(result);
 
-    if (result.includes("Win")) {
-      playerScore++;
-    } else if (result.includes("Lose")) {
-      computerScore++;
-    }
-  }
+//     if (result.includes("Win")) {
+//       playerScore++;
+//     } else if (result.includes("Lose")) {
+//       computerScore++;
+//     }
+//   }
 
-  if (playerScore > computerScore) {
-    console.log("Congrats! You won the game 🌷!");
-  } else if (playerScore < computerScore) {
-    console.log("Computer wins the game 😢");
-  } else {
-    console.log("It's a tie 😮!");
-  }
-}
+//   if (playerScore > computerScore) {
+//     console.log("Congrats! You won the game 🌷!");
+//   } else if (playerScore < computerScore) {
+//     console.log("Computer wins the game 😢");
+//   } else {
+//     console.log("It's a tie 😮!");
+//   }
+// }
 
-game();
+// game();
