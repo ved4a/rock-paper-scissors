@@ -1,6 +1,6 @@
 "use strict";
 
-// Create a function called getComputerChoice that will randomly return Rock, Paper, or Scissors.
+// CREATE A FUNCTION CALLED getComputerChoice THAT WILL RANDOMLY RETURN ROCK, PAPER, OR SCISSORS
 
 function getComputerChoice() {
   // Sub-problem 1: create a list of choices
@@ -13,10 +13,10 @@ function getComputerChoice() {
   return choices[randomChoice];
 }
 
-// Testing the function
+// TESTING THE FUNCTION
 console.log(getComputerChoice());
 
-// Write a function that plays a single round of Rock Paper Scissors
+// WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS
 
 // Sub-problem 1: making a function that takes 2 parameters
 function playRound(playerSelection, computerSelection) {
@@ -42,10 +42,12 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// Making player selection
+// MAKING PLAYER SELECTION
+// Initial attempt: no GUI
 // const playerSelection = "paper"
+// Next attempt: DOM Manipulation
 
-// Creating computer selection
+// CREATING COMPUTER SELECTION
 const computerSelection = getComputerChoice();
 
 // ADDING EVENT LISTENERS TO THE BUTTONS
@@ -58,7 +60,7 @@ rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
 
-// Testing for bugs
+// TESTING FOR BUGS
 console.log(computerSelection);
 
 // One-round game
