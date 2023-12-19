@@ -3,29 +3,14 @@
 // CREATE A FUNCTION CALLED getComputerChoice THAT WILL RANDOMLY RETURN ROCK, PAPER, OR SCISSORS
 
 function getComputerChoice() {
-  // Sub-problem 1: create a list of choices
   const choices = ["Rock", "Paper", "Scissors"];
-
-  // Sub-problem 2: element of "random"
   const randomChoice = Math.floor(Math.random() * choices.length);
-
-  // Sub-problem 3: returning the value
   return choices[randomChoice];
 }
 
-// TESTING THE FUNCTION
-// console.log(getComputerChoice());
-
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS
 
-// Sub-problem 1: making a function that takes 2 parameters
 function playRound(playerSelection, computerSelection) {
-  // // Making it case-insensitive
-  // playerSelection =
-  //   playerSelection.charAt(0).toUpperCase() +
-  //   playerSelection.slice(1).toLowerCase();
-
-  // Sub-problem 2: declaring a winner
   if (playerSelection == computerSelection) {
     const draw = `Draw! Both of you chose ${computerSelection}.`;
     return draw;
@@ -42,47 +27,32 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+// DISPLAYING THE RESULTS
+const displayResults = document.querySelector("#results");
+
 // MAKING PLAYER SELECTION
 
-// Initial attempt: no GUI
-// const playerSelection = "paper"
-
-// Next attempt: DOM Manipulation
-
-// CREATING COMPUTER SELECTION
-// const computerSelection = getComputerChoice();
-
-// ADDING EVENT LISTENERS TO THE BUTTONS
-
-// Sub-part 1: linking buttons from HTML to JS
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
-// Sub-part 2: creating event listeners for buttons & Sub-part 3: corresponding button runs the code
 rock.addEventListener("click", function () {
   const computerSelection = getComputerChoice();
   const result = playRound("Rock", computerSelection);
-  console.log(result);
+  displayResults.textContent = result;
 });
 
 paper.addEventListener("click", function () {
   const computerSelection = getComputerChoice();
   const result = playRound("Paper", computerSelection);
-  console.log(result);
+  displayResults.textContent = result;
 });
 
 scissors.addEventListener("click", function () {
   const computerSelection = getComputerChoice();
   const result = playRound("Scissors", computerSelection);
-  console.log(result);
+  displayResults.textContent = result;
 });
-
-// TESTING FOR BUGS
-// console.log(computerSelection);
-
-// One-round game
-// console.log(playRound(playerSelection, computerSelection));
 
 // New function for a 5 round game
 // function game() {
