@@ -54,6 +54,13 @@ scissors.addEventListener("click", function () {
   displayResults.textContent = result;
 });
 
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (let i = 0; i < 5; i++) {}
+}
+
 // New function for a 5 round game
 // function game() {
 //   let playerScore = 0;
