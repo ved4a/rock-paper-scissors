@@ -7,40 +7,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="rps-title">
-        <p class="title">Rock, Paper, Scissors</p>
-        <p class="sub-title">Humanity vs Computer</p>
-      </div>
+    <div class="heading-container">
+      <p class="title bold">Rock, Paper, Scissors</p>
+      <p class="sub-title">Humanity vs Technology</p>
     </div>
 
-    <div id="h-vs-c">
-      <p id="results">Who will reign supreme?</p>
+    <div class="h-vs-c">
+      <p id="results" class="bold">Who will reign supreme over our planet?</p>
     </div>
 
-    <div id="computer-choice-visible">
+    <div class="computer-choice-visible">
       <!--Change this in JS, make it have a textContent-->
       <p id="comp-choice">Computers are choosing...</p>
     </div>
 
-    <div id="player-score-display">
-      <p id="player-score"></p>
-      <p class="character">Humanity</p>
+    <div class="display-scores">
+      <div class="player-score-display">
+        <p class="character">Humanity</p>
+        <p id="player-score">0</p>
+        <!--Have to use JS to change this, it's just a placeholder-->
+      </div>
+
+      <div class="computer-score-display">
+        <p class="character">Computers</p>
+        <p id="computer-score">0</p>
+        <!--Have to use JS to change this, it's just a placeholder-->
+      </div>
     </div>
 
-    <div id="computer-score-display">
-      <p id="computer-score"></p>
-      <p class="character">Computers</p>
+    <div class="gui-buttons">
+      <button class="btn" id="rock">Rock</button>
+      <button class="btn" id="paper">Paper</button>
+      <button class="btn" id="scissors">Scissors</button>
     </div>
-
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-
-    <script src="script.js"></script>
 
     <footer>
-      <p>Copyright ved4a</p>
+      <p>Copyright © ved4a</p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

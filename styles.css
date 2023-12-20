@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap");
+
+:root {
+  --primary-color: rgb(19, 15, 15);
+  --secondary-color: whitesmoke;
+  --tertiary-color: lightgray;
+}
+
+body {
+  font-family: "Silkscreen", sans-serif;
+  margin: 0;
+  background-color: var(--primary-color);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.heading-container {
+  padding: 1.5em 0;
+  text-align: center;
+}
+
+.h-vs-c,
+.computer-choice-visible {
+  display: flex;
+  justify-content: center;
+}
+
+.display-scores {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gui-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 45px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: rgb(255, 180, 255);
+  /* text-shadow: ; */
+}
+
+.sub-title {
+  font-size: 18px;
+  color: var(--tertiary-color);
+  margin-bottom: 0;
+}
+
+.h-vs-c {
+  padding: 0.5em;
+  color: black;
+  background-color: var(--tertiary-color);
+  font-size: 25px;
+}
+
+.computer-choice-visible {
+  font-size: 20px;
+  padding: 0.5em 0;
+  color: gray;
+}
+
+.display-scores {
+  padding: 0.25em 0;
+  color: var(--secondary-color);
+  font-size: 25px;
+}
+
+#player-score,
+#computer-score {
+  margin: 0;
+  font-size: 100px;
+  color: white;
+}
+
+.player-score-display,
+.computer-score-display {
+  text-align: center;
+}
+
+.character {
+  margin: 0;
+}
+
+.gui-buttons {
+  padding: 1em;
+  text-align: center;
+  margin-top: 7em;
+}
+
+.btn {
+  display: inline-block; /* Display buttons in a line */
+  margin: 0 1.5em; /* Adjust space between buttons */
+  padding: 10px 20px; /* Add padding for better visual */
+  font-family: "Silkscreen", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(102, 0, 102);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  color: rgb(102, 0, 102);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: rgb(102, 0, 102);
+  font-size: 15px;
+}
