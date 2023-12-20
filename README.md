@@ -1,6 +1,5 @@
-This project aims to create a game of "Rock, Paper, Scissors".
+This is a 5-round game of Rock, Paper, Scissors.
 
-Initially, this game will be played in the console. However, it will be updated over time in order to be played using GUI.
+The "backstory" is that Humanity is attempting to regain control of the Earth from technology. Perhaps a tad bit complex for the functionality of the game.
 
-Current status: Finished creating game on browser
-Current goal: Moving on to understanding DOM manipulation
+I initially created this to be played in the console, but now it is entirely functional to be played using GUI! A fun little addition I made was to make the "Rock" symbol an electric guitar. Whoever happens to come across this repo, enjoy!
