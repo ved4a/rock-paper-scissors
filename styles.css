@@ -61,7 +61,7 @@ body {
 }
 
 .computer-choice-visible {
-  font-size: 20px;
+  font-size: 22px;
   padding: 0.5em 0;
   color: gray;
 }
@@ -118,7 +118,7 @@ footer {
   align-items: center;
   gap: 10px;
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: white;
   color: rgb(102, 0, 102);
   font-size: 15px;
 }

@@ -19,10 +19,10 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection == "Paper" && computerSelection == "Rock") ||
     (playerSelection == "Scissors" && computerSelection == "Paper")
   ) {
-    const playerWin = `You Win! ${playerSelection} beats ${computerSelection}!`;
+    const playerWin = `You Won! ${playerSelection} beats ${computerSelection}!`;
     return playerWin;
   } else {
-    const computerWin = `You Lose! ${computerSelection} beats ${playerSelection}!`;
+    const computerWin = `You Lost! ${computerSelection} beats ${playerSelection}!`;
     return computerWin;
   }
 }
@@ -30,36 +30,90 @@ function playRound(playerSelection, computerSelection) {
 // DISPLAYING THE RESULTS
 const displayResults = document.querySelector("#results");
 
-// MAKING PLAYER SELECTION
-
+// CREATING JS VARIABLES FOR ROCK/PAPER/SCISSORS HTML ELEMENTS
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
-rock.addEventListener("click", function () {
+// MAKING PLAYER SELECTION
+
+// Sub-problem 1: Creating a generic function to stick to DRY principles
+function playerSelectionHandler(playerSelection) {
   const computerSelection = getComputerChoice();
-  const result = playRound("Rock", computerSelection);
+  const result = playRound(playerSelection, computerSelection);
   displayResults.textContent = result;
+  computerChoice.textContent = `Computers chose ${computerSelection}.`;
+}
+
+// Sub-problem 2: Adding event listeners to the respective buttons
+rock.addEventListener("click", function () {
+  playerSelectionHandler("Rock");
 });
 
 paper.addEventListener("click", function () {
-  const computerSelection = getComputerChoice();
-  const result = playRound("Paper", computerSelection);
-  displayResults.textContent = result;
+  playerSelectionHandler("Paper");
 });
 
 scissors.addEventListener("click", function () {
-  const computerSelection = getComputerChoice();
-  const result = playRound("Scissors", computerSelection);
-  displayResults.textContent = result;
+  playerSelectionHandler("Scissors");
 });
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
+// rock.addEventListener("click", function () {
+//   const computerSelection = getComputerChoice();
+//   const result = playRound("Rock", computerSelection);
+//   displayResults.textContent = result;
+// });
 
-  for (let i = 0; i < 5; i++) {}
+// paper.addEventListener("click", function () {
+//   const computerSelection = getComputerChoice();
+//   const result = playRound("Paper", computerSelection);
+//   displayResults.textContent = result;
+// });
+
+// scissors.addEventListener("click", function () {
+//   const computerSelection = getComputerChoice();
+//   const result = playRound("Scissors", computerSelection);
+//   displayResults.textContent = result;
+// });
+
+// CREATING JS VARIABLES FOR HTML ELEMENTS
+const playerScoreElement = document.querySelector("#player-score");
+const computerScoreElement = document.querySelector("#computer-score");
+const computerChoice = document.querySelector("#comp-choice");
+
+// WRITE A FUNCTION THAT PLAYS 5 ROUNDS OF THE GAME
+function game() {
+  let playerScore;
+  let computerScore;
+
+  for (let i = 0; i < 5; i++) {
+    result = playRound(
+      playerSelectionHandler(playerSelection),
+      computerSelection
+    );
+
+    if (result.includes("Won")) {
+      playerScore++;
+    } else if (result.includes("Lost")) {
+      computerScore++;
+    }
+  }
+
+  if (playerScore > computerScore) {
+    displayResults.textContent = "You have saved humanity. Congratulations!";
+  } else if (playerScore < computerScore) {
+    displayResults.textContent =
+      "Technology reigns supreme...good try comrade.";
+  } else if ((playerScore = computerScore)) {
+    displayResults.textContent =
+      "Humanity and technology are evenly matched...we'll get them some other day.";
+  }
+
+  playerScoreElement.textContent = playerScore;
+  computerScoreElement.textContent = computerScore;
 }
+
+game();
 
 // New function for a 5 round game
 // function game() {
