@@ -41,7 +41,11 @@ function checkGameEnd() {
       finalOutcome.textContent = "An even match...";
     }
 
+    // Sub-problem 2: making visible changes to the game so people will reload
     reload.textContent = "Click here to reload game.";
+    reload.style.backgroundColor = "rgb(255, 180, 255)";
+    reload.style.color = "black";
+    reload.style.padding = "10px";
 
     // Sub-problem 2: disable the buttons to prevent further plays
     rock.disabled = true;

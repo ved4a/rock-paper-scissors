@@ -12,6 +12,13 @@ body {
   font-family: "Silkscreen", sans-serif;
   margin: 0;
   background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 .bold {
@@ -92,7 +99,8 @@ body {
 .gui-buttons {
   padding: 1em;
   text-align: center;
-  margin-top: 5em;
+  margin-top: 4em;
+  margin-bottom: 2em;
 }
 
 .btn {
@@ -111,16 +119,13 @@ body {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   width: 100%;
   background-color: white;
   font-size: 15px;
+  margin-top: auto;
 }
 
 .copyright {
@@ -128,4 +133,142 @@ footer {
   color: var(--secondary-color);
   border-radius: 10px;
   padding: 10px;
+}
+
+/* Responsive Design */
+
+/* Phone Screen*/
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .sub-title {
+    font-size: 14px;
+  }
+
+  .h-vs-c {
+    font-size: 18px;
+  }
+
+  .computer-choice-visible {
+    font-size: 16px;
+  }
+
+  .display-scores {
+    font-size: 18px;
+  }
+
+  #player-score,
+  #computer-score {
+    font-size: 60px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    margin: 0 1em;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .copyright {
+    padding: 8px;
+  }
+}
+
+/* Tablets / iPads */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .title {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+
+  .sub-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .h-vs-c {
+    font-size: 20px;
+    padding: 1em;
+  }
+
+  .computer-choice-visible {
+    font-size: 18px;
+    padding: 1em 0;
+  }
+
+  .display-scores {
+    font-size: 20px;
+    padding: 0.5em 0;
+  }
+
+  #player-score,
+  #computer-score {
+    font-size: 80px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    margin: 0 1.5em;
+  }
+
+  .footer {
+    flex-direction: row;
+    font-size: 15px;
+  }
+
+  .copyright {
+    padding: 10px;
+  }
+
+  .gui-buttons {
+    margin-top: auto;
+  }
+}
+
+/* Desktops */
+@media only screen and (min-width: 1025px) {
+  .title {
+    font-size: 45px;
+  }
+
+  .sub-title {
+    font-size: 18px;
+  }
+
+  .h-vs-c {
+    font-size: 25px;
+  }
+
+  .computer-choice-visible {
+    font-size: 22px;
+  }
+
+  .display-scores {
+    font-size: 25px;
+  }
+
+  #player-score,
+  #computer-score {
+    font-size: 100px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    margin: 0 1.5em;
+  }
+
+  .footer {
+    flex-direction: row;
+    font-size: 15px;
+  }
+
+  .copyright {
+    padding: 10px;
+  }
 }
