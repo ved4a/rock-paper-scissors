@@ -119,6 +119,12 @@ footer {
   gap: 10px;
   width: 100%;
   background-color: white;
-  color: rgb(102, 0, 102);
   font-size: 15px;
+}
+
+.copyright {
+  background-color: rgb(102, 0, 102);
+  color: var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px;
 }
