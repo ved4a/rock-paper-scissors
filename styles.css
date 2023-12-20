@@ -91,25 +91,21 @@ body {
 .gui-buttons {
   padding: 1em;
   text-align: center;
-  margin-top: 7em;
+  margin-top: 5em;
 }
 
 .btn {
-  display: inline-block; /* Display buttons in a line */
-  margin: 0 1.5em; /* Adjust space between buttons */
-  padding: 10px 20px; /* Add padding for better visual */
-  font-family: "Silkscreen", sans-serif;
-  font-size: 20px;
+  display: inline-block;
+  margin: 0 1.5em;
+  padding: 10px 20px;
   cursor: pointer;
   background-color: rgb(102, 0, 102);
-  color: var(--secondary-color);
   border: none;
   border-radius: 5px;
 }
 
 .btn:hover {
-  color: rgb(102, 0, 102);
-  background-color: var(--secondary-color);
+  background-color: rgb(255, 180, 255);
   cursor: pointer;
 }
 
