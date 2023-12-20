@@ -51,6 +51,7 @@ body {
   font-size: 18px;
   color: var(--tertiary-color);
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 .h-vs-c {

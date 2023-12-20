@@ -15,27 +15,67 @@ const scissors = document.querySelector("#scissors");
 // CREATING A JS VARIABLE TO DISPLAY THE RESULTS
 const displayResults = document.querySelector("#results");
 
+// CREATING A JS VARIABLE TO DISPLAY FINAL OUTCOME
+const finalOutcome = document.querySelector(".title");
+
+// CREATING A JS VARIABLE TO RELOAD THE PAGE
+const reload = document.querySelector(".sub-title");
+
 // DEFINING PLAYER SCORES
 let playerScore = 0;
 let computerScore = 0;
 
+// KEEPING TRACK OF ROUNDS
+let rounds = 0;
+
+// CHECKING IF GAME HAS ENDED
+function checkGameEnd() {
+  rounds++;
+  if (rounds === 5) {
+    // Sub-problem 1: game ends after 5 rounds
+    if (playerScore > computerScore) {
+      finalOutcome.textContent = "Humanity lives another day.";
+    } else if (computerScore > playerScore) {
+      finalOutcome.textContent = "Technology reigns.";
+    } else {
+      finalOutcome.textContent = "An even match...";
+    }
+
+    reload.textContent = "Click here to reload game.";
+
+    // Sub-problem 2: disable the buttons to prevent further plays
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+
+    reload.addEventListener("click", function () {
+      location.reload();
+    });
+  }
+}
+
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == computerSelection) {
-    const draw = `Draw! Both of you chose ${computerSelection}.`;
-    return draw;
-  } else if (
-    (playerSelection == "Rock" && computerSelection == "Scissors") ||
-    (playerSelection == "Paper" && computerSelection == "Rock") ||
-    (playerSelection == "Scissors" && computerSelection == "Paper")
-  ) {
-    const playerWin = `You Won! ${playerSelection} beats ${computerSelection}!`;
-    playerScore++;
-    return playerWin;
-  } else {
-    const computerWin = `You Lost! ${computerSelection} beats ${playerSelection}!`;
-    computerScore++;
-    return computerWin;
+  if (rounds < 5) {
+    if (playerSelection == computerSelection) {
+      const draw = `Draw! Both of you chose ${computerSelection}.`;
+      checkGameEnd();
+      return draw;
+    } else if (
+      (playerSelection == "Rock" && computerSelection == "Scissors") ||
+      (playerSelection == "Paper" && computerSelection == "Rock") ||
+      (playerSelection == "Scissors" && computerSelection == "Paper")
+    ) {
+      const playerWin = `You Won! ${playerSelection} beats ${computerSelection}!`;
+      playerScore++;
+      checkGameEnd();
+      return playerWin;
+    } else {
+      const computerWin = `You Lost! ${computerSelection} beats ${playerSelection}!`;
+      computerScore++;
+      checkGameEnd();
+      return computerWin;
+    }
   }
 }
 
