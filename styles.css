@@ -36,6 +36,10 @@ main {
   justify-content: center;
 }
 
+#results {
+  text-align: center;
+}
+
 .display-scores {
   display: flex;
   justify-content: space-around;
