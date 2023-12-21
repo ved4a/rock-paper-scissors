@@ -6,6 +6,8 @@
   --primary-color: rgb(19, 15, 15);
   --secondary-color: whitesmoke;
   --tertiary-color: lightgray;
+  --primary-pop-color: rgb(255, 180, 255);
+  --secondary-pop-color: rgb(102, 0, 102);
 }
 
 body {
@@ -54,7 +56,7 @@ main {
   font-size: 45px;
   margin-top: 0;
   margin-bottom: 8px;
-  color: rgb(255, 180, 255);
+  color: var(--primary-pop-color);
   /* text-shadow: ; */
 }
 
@@ -112,13 +114,13 @@ main {
   margin: 0 1.5em;
   padding: 10px 20px;
   cursor: pointer;
-  background-color: rgb(102, 0, 102);
+  background-color: var(--secondary-pop-color);
   border: none;
   border-radius: 5px;
 }
 
 .btn:hover {
-  background-color: rgb(255, 180, 255);
+  background-color: var(--primary-pop-color);
   cursor: pointer;
 }
 
@@ -133,7 +135,7 @@ footer {
 }
 
 .copyright {
-  background-color: rgb(102, 0, 102);
+  background-color: var(--secondary-pop-color);
   color: var(--secondary-color);
   border-radius: 10px;
   padding: 10px;
